@@ -3,7 +3,7 @@ import { config } from 'dotenv';
 
 config();
 
-export const envSchema = z.object({
+const envSchema = z.object({
   NODE_ENV: z
     .enum(['development', 'production', 'test'])
     .default('development'),

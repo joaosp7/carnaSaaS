@@ -1,18 +1,17 @@
-import { Body, Controller, Get, Injectable, Post, Req, Request } from "@nestjs/common";
-import { CatService } from "./cat.service";
-import { CreateCatDto } from "./dto/createCat.dto";
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { CatService } from './cat.service';
+import { CreateCatDto } from './dto/createCat.dto';
 
 @Controller('cats')
-export class CatsController{
-  constructor(private catService: CatService){}
+export class CatsController {
+  constructor(private catService: CatService) {}
   @Get()
-  async findAll(){
-     return await this.catService.findAll();
+  async findAll() {
+    return await this.catService.findAll();
   }
 
   @Post()
-  async createCat(@Body() dto: CreateCatDto){
+  async createCat(@Body() dto: CreateCatDto) {
     return await this.catService.create(dto);
   }
-
 }

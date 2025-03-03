@@ -1,5 +1,5 @@
 export class CreateCatDto {
-  name:string;
+  name: string;
   age: number;
   breed: string;
 }
